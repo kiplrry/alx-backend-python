@@ -18,8 +18,8 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     i = 0
     arr = []
     while i < n:
-        ans = await wait_random(max_delay)
-        arr.append(ans)
+        arr.append(await wait_random(max_delay))
         i += 1
+    lst = asyncio.gather(*arr)
 
-    return arr
+    return lst
