@@ -1,9 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+concat = __import__('1-concat').concat
 
-class User:
-    name: str
-    id: int
+str1 = "egg"
+str2 = "shell"
 
-larry = User()
-larry.names = 'larry'
-print(larry.__dict__)
+print(concat(str1, str2) == "{}{}".format(str1, str2))
+print(concat.__annotations__)
